@@ -1,24 +1,24 @@
+import 'package:clean_chat/core/utils/constant.dart';
 import 'package:flutter/material.dart';
 
-import 'app_color.dart';
+import 'app_text_theme.dart';
 
 class AppLightThemeData implements AppThemeData {
   @override
   ThemeData get materialThemeData => ThemeData(
-        brightness: Brightness.light,
-        floatingActionButtonTheme: const FloatingActionButtonThemeData(
-            backgroundColor: AppColor.primaryGreen),
-        appBarTheme: const AppBarTheme(),
-      );
+      brightness: Brightness.light,
+      appBarTheme: const AppBarTheme(),
+      textTheme: AppTextTheme.textTheme,
+      fontFamily: Constant.fontFamily);
 }
 
 class AppDarkThemeData implements AppThemeData {
   @override
   ThemeData get materialThemeData => ThemeData(
       brightness: Brightness.dark,
-      floatingActionButtonTheme: const FloatingActionButtonThemeData(
-          backgroundColor: AppColor.primaryGreen),
-      appBarTheme: const AppBarTheme());
+      appBarTheme: const AppBarTheme(),
+      textTheme: AppTextTheme.textTheme,
+      fontFamily: Constant.fontFamily);
 }
 
 abstract class AppThemeData {

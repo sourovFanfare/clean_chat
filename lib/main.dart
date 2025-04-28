@@ -5,6 +5,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'core/di/injection_container.dart';
 import 'core/router/app_router.dart';
 import 'core/theme/app_theme_data.dart';
+import 'features/presentation/blocs/chat_dashboard_bloc.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -20,17 +21,15 @@ class CleanChatApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MultiBlocProvider(
-      providers: [],
-      child: AppTheme(
-        darkTheme: _darkTheme,
-        lightTheme: _lightTheme,
-        child: MaterialApp.router(
-          title: Constant.appName,
-          theme: _lightTheme.materialThemeData,
-          darkTheme: _darkTheme.materialThemeData,
-          routerConfig: getIt<AppRouter>().router,
-        ),
+    return AppTheme(
+      darkTheme: _darkTheme,
+      lightTheme: _lightTheme,
+      child: MaterialApp.router(
+        title: Constant.appName,
+        theme: _lightTheme.materialThemeData,
+        darkTheme: _darkTheme.materialThemeData,
+        routerConfig: getIt<AppRouter>().router,
+        debugShowCheckedModeBanner: false,
       ),
     );
   }

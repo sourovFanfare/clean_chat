@@ -5,6 +5,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'core/di/injection_container.dart';
 import 'core/router/app_router.dart';
 import 'core/theme/app_theme_data.dart';
+import 'features/presentation/blocs/chat_dashboard_bloc.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();

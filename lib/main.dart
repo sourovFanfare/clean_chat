@@ -20,17 +20,15 @@ class CleanChatApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MultiBlocProvider(
-      providers: [],
-      child: AppTheme(
-        darkTheme: _darkTheme,
-        lightTheme: _lightTheme,
-        child: MaterialApp.router(
-          title: Constant.appName,
-          theme: _lightTheme.materialThemeData,
-          darkTheme: _darkTheme.materialThemeData,
-          routerConfig: getIt<AppRouter>().router,
-        ),
+    return AppTheme(
+      darkTheme: _darkTheme,
+      lightTheme: _lightTheme,
+      child: MaterialApp.router(
+        title: Constant.appName,
+        theme: _lightTheme.materialThemeData,
+        darkTheme: _darkTheme.materialThemeData,
+        routerConfig: getIt<AppRouter>().router,
+        debugShowCheckedModeBanner: false,
       ),
     );
   }

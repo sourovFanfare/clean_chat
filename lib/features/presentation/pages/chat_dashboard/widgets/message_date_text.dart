@@ -1,3 +1,4 @@
+import 'package:clean_chat/core/theme/app_color.dart';
 import 'package:flutter/material.dart';
 
 class MessageDateText extends StatelessWidget {
@@ -7,6 +8,12 @@ class MessageDateText extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final textTheme = Theme.of(context).textTheme;
+    Color borderColor = AppColor.tealSecondary300;
+
+    List<Shadow> shadows = [
+      Shadow(
+          offset: const Offset(-1.0, 1.0), blurRadius: 3.0, color: borderColor),
+    ];
 
     String? date;
     bool shouldShowDate = false;
@@ -22,7 +29,7 @@ class MessageDateText extends StatelessWidget {
         margin: const EdgeInsets.only(bottom: 16.0),
         child: Text(
           date ?? "",
-          style: textTheme.labelSmall,
+          style: textTheme.labelSmall?.copyWith(shadows: shadows),
         ),
       );
     }
